@@ -53,11 +53,13 @@ Your task is to deploy the following infrastructure on AWS:
 
 > 💡 **Bonus Points For:**
 
-- **GitHub Actions to validate IaC** (e.g., `terraform fmt`, `terraform validate`, or equivalent for chosen tool).
-- **Pre-commit hooks** to ensure linting and formatting checks before commits.
-- **Tests for your IaC code** using `terraform validate`, `Terratest`, or equivalent for chosen tool.
-- **Monitoring alerts** (e.g., AWS CloudWatch Alarms for Lambda errors).
-- **Docker or Docker Compose** to facilitate local testing, such as:
+- **Data Quality & Validation**: Implementing **schema validation before storing data in PostgreSQL**.  
+- **Indexing & Query Optimization**: Using **PostGIS spatial indexing** for efficient geospatial queries.  
+- **Monitoring & Alerts**: Setting up **AWS CloudWatch Alarms** for S3 event failures or Lambda errors.  
+- **Automated Data Backups**: Creating periodic **database backups to S3** using AWS Lambda or AWS Backup.  
+- **GitHub Actions for validation**: Running **`terraform fmt`, `terraform validate`**, or equivalent for the chosen IaC tool.  
+- **Pre-commit hooks**: Ensuring linting and security checks before committing.  
+- **Docker for local testing**: Using **Docker Compose to spin up**:
   - Running a local PostgreSQL database with PostGIS to simulate the cloud environment 🛠
   - Providing a local S3-compatible service (e.g., MinIO) to test file ingestion before deployment 🖥
 
@@ -78,11 +80,12 @@ Your task is to deploy the following infrastructure on AWS:
 
 > 🔍 **What we'll be looking at:**
 
-- **Correctness and completeness** of the solution.
-- **Code quality, modularity, and best practices.**
-- **Security considerations** in networking and IAM roles.
-- **Justification for chosen tool(s).**
-- **Documentation clarity.**
-- **Bonus points for additional features.**
+- **Correctness and completeness** of the **data pipeline**.  
+- **Use of best practices for event-driven processing** (S3 triggers, Lambda execution).  
+- **Data transformation & aggregation logic** implemented in Lambda.  
+- **Optimization for geospatial queries** using PostGIS.  
+- **Data backup & integrity strategies** (optional, e.g., automated S3 backups).  
+- **CI/CD automation using GitHub Actions and pre-commit hooks** (optional).  
+- **Documentation clarity**: Clear explanation of data flow, transformation logic, and infrastructure choices.  
 
 ## 🎯 **Good luck and happy coding!** 🚀
